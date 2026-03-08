@@ -5,5 +5,7 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     routes:
+      - path: /assets/*
+        dest: /assets/$1
       - path: /*
         dest: /index.html
