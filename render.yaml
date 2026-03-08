@@ -1,11 +1,10 @@
 services:
-  - type: static
+  - type: web
     name: quickbook
-    env: static
+    env: node
+    plan: free
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    routes:
-      - path: /assets/*
-        dest: /assets/$1
-      - path: /*
-        dest: /index.html
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
