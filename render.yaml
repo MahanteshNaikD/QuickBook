@@ -1,0 +1,9 @@
+services:
+  - type: static
+    name: quickbook
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - path: /*
+        dest: /index.html
