@@ -43,25 +43,14 @@ export const EnhancedServiceCard = ({
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ type: 'spring', stiffness: 300 }}
-          className={`bg-gradient-to-br ${bgColor} p-8 h-48 flex items-center justify-center overflow-hidden relative`}
+          className={`bg-gradient-to-br ${bgColor} p-2 h-48 flex items-center justify-center overflow-hidden relative`}
         >
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute inset-0 opacity-30 rounded-full"
-            style={{
-              background: 'radial-gradient(circle, currentColor 0%, transparent 70%)',
-            }}
-          />
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative z-10 w-32 h-32"
+            className="relative z-10 w-full h-full rounded-lg overflow-hidden"
           >
             {image}
           </motion.div>

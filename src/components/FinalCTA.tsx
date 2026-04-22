@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { CircuitPattern } from './BackgroundAnimations';
 
-export const FinalCTASection = () => {
+interface FinalCTASectionProps {
+  onBookClick: () => void;
+}
+
+export const FinalCTASection = ({ onBookClick }: FinalCTASectionProps) => {
   return (
     <section className="py-20 bg-gradient-to-r from-primary via-secondary to-primary relative overflow-hidden">
       <CircuitPattern />
@@ -64,6 +68,7 @@ export const FinalCTASection = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
               whileTap={{ scale: 0.95 }}
+              onClick={onBookClick}
               className="bg-accent text-white font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book Service Now

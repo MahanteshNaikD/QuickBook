@@ -105,7 +105,8 @@ export const ServiceDetailsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-primary/5 to-accent/5 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-50/95 to-white/95" />
       <AnimatedBlobs />
       <div className="container-custom relative z-10">
         <motion.h2

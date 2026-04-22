@@ -9,6 +9,7 @@ import {
   RefrigeratorImage,
 } from './ServiceImages';
 import type { Service } from '../types/booking';
+import showcaseBackground from '../assets/1745371656.png';
 
 interface ServicesSectionProps {
   onBookClick: (service: string) => void;
@@ -111,7 +112,17 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-white relative overflow-hidden">
+    <section
+      id="services"
+      className="py-20 relative overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${showcaseBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/72 via-blue-600/48 to-secondary/35" />
+        <div className="absolute inset-0 bg-white/50" />
+      </div>
       <ServiceIconsBackground />
       <div className="container-custom relative z-10">
         <motion.div

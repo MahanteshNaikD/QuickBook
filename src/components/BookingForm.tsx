@@ -80,7 +80,7 @@ export const BookingForm = ({
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 z-50 bg-black/50 flex items-start justify-center overflow-y-auto p-2 sm:p-4 sm:items-center"
           onClick={onClose}
         >
           <motion.div
@@ -88,7 +88,7 @@ export const BookingForm = ({
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="bg-white rounded-lg shadow-2xl max-w-2xl w-full"
+            className="bg-white rounded-lg shadow-2xl max-w-2xl w-full my-2 sm:my-4 max-h-[calc(100dvh-1rem)] sm:max-h-[calc(100dvh-2rem)] flex flex-col overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -109,7 +109,7 @@ export const BookingForm = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
-              className="p-6"
+              className="p-6 flex-1 min-h-0 overflow-y-auto"
             >
               {showSuccess ? (
                 <motion.div

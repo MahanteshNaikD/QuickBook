@@ -12,10 +12,29 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --theme-bg: #f8fafc;
+  --theme-text: #1e293b;
+  --theme-muted: #475569;
+  --theme-surface: #ffffff;
+  --theme-surface-soft: rgba(255, 255, 255, 0.7);
+  --theme-border: #cbd5e1;
+}
+
+[data-theme='dark'] {
+  --theme-bg: #020617;
+  --theme-text: #e2e8f0;
+  --theme-muted: #94a3b8;
+  --theme-surface: #0f172a;
+  --theme-surface-soft: rgba(15, 23, 42, 0.82);
+  --theme-border: #334155;
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: #F8FAFC;
-  color: #1E293B;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
@@ -35,13 +54,10 @@ body {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
@@ -51,15 +67,56 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.theme-page {
+  color: var(--theme-text);
+}
+
+.theme-nav {
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+}
+
+.theme-text-muted {
+  color: var(--theme-muted);
+}
+
+.theme-select {
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+  border-color: var(--theme-border);
+}
+
+[data-theme='dark'] .bg-white {
+  background-color: var(--theme-surface);
+}
+
+[data-theme='dark'] .bg-white\/50 {
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+[data-theme='dark'] .text-text {
+  color: var(--theme-text);
+}
+
+[data-theme='dark'] .text-gray-900 {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .text-gray-700 {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .text-gray-600 {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .text-gray-500 {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .shadow-md,
+[data-theme='dark'] .shadow-lg,
+[data-theme='dark'] .shadow-xl,
+[data-theme='dark'] .shadow-2xl {
+  --tw-shadow-color: rgb(15 23 42 / 0.65);
 }

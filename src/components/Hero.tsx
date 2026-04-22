@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { FloatingAppliances, HeroSectionIllustration } from './HeroBackground';
 import { ServicePreview } from './ServicePreview';
+import showcaseBackground from '../assets/1745371656.png';
 
 interface HeroProps {
   onBookClick: () => void;
@@ -35,11 +36,31 @@ export const Hero = ({ onBookClick }: HeroProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="relative min-h-screen bg-gradient-to-br from-primary via-blue-500 to-secondary flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
+      <img
+        src={showcaseBackground}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        fetchPriority="high"
+        className="hidden"
+      />
+
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${showcaseBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/82 via-blue-600/62 to-secondary/52" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-transparent to-slate-900/15" />
+        <div className="absolute inset-0 bg-white/6" />
+      </div>
+
       {/* Background Elements */}
-      <FloatingAppliances />
-      <HeroSectionIllustration />
+      <div className="absolute inset-0 opacity-60">
+        <FloatingAppliances />
+        <HeroSectionIllustration />
+      </div>
 
       {/* Content */}
       <div className="container-custom w-full py-20 relative z-10">
