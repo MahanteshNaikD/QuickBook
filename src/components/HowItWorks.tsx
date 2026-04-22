@@ -2,7 +2,11 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Wrench, CheckCircle } from 'lucide-react';
 import { FloatingShapes } from './AnimatedBackground';
 
-export const HowItWorks = () => {
+interface HowItWorksProps {
+  onBookClick: () => void;
+}
+
+export const HowItWorks = ({ onBookClick }: HowItWorksProps) => {
   const steps = [
     {
       icon: <Phone className="w-8 h-8" />,
@@ -132,6 +136,7 @@ export const HowItWorks = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={onBookClick}
             className="btn-primary bg-gradient-to-r from-primary to-secondary hover:shadow-lg text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300"
           >
             Book Your Service Now
