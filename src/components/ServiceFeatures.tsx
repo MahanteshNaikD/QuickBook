@@ -61,7 +61,11 @@ export const ServiceFeatures = ({ features }: ServiceFeaturesProps) => {
 };
 
 // Service details with icons
-export const ServiceDetailsSection = () => {
+interface ServiceDetailsSectionProps {
+  theme: 'light' | 'dark';
+}
+
+export const ServiceDetailsSection = ({ theme }: ServiceDetailsSectionProps) => {
   const details = [
     {
       icon: <Clock className="w-8 h-8" />,
@@ -106,7 +110,13 @@ export const ServiceDetailsSection = () => {
 
   return (
     <section className="py-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-50/95 to-white/95" />
+      <div
+        className={`absolute inset-0 ${
+          theme === 'dark'
+            ? 'bg-gradient-to-r from-slate-950/92 to-slate-900/88'
+            : 'bg-gradient-to-r from-slate-50/95 to-white/95'
+        }`}
+      />
       <AnimatedBlobs />
       <div className="container-custom relative z-10">
         <motion.h2

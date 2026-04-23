@@ -4,9 +4,10 @@ import { FloatingShapes } from './AnimatedBackground';
 
 interface HowItWorksProps {
   onBookClick: () => void;
+  theme: 'light' | 'dark';
 }
 
-export const HowItWorks = ({ onBookClick }: HowItWorksProps) => {
+export const HowItWorks = ({ onBookClick, theme }: HowItWorksProps) => {
   const steps = [
     {
       icon: <Phone className="w-8 h-8" />,
@@ -54,7 +55,13 @@ export const HowItWorks = ({ onBookClick }: HowItWorksProps) => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section
+      className={`py-20 relative overflow-hidden ${
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-slate-950/90 to-slate-900/85'
+          : 'bg-gradient-to-b from-white to-gray-50'
+      }`}
+    >
       <FloatingShapes count={6} />
       <div className="container-custom relative z-10">
         <motion.div
@@ -93,7 +100,9 @@ export const HowItWorks = ({ onBookClick }: HowItWorksProps) => {
               {/* Step card */}
               <motion.div
                 whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
-                className="bg-white rounded-lg p-8 text-center h-full shadow-lg"
+                className={`bg-white rounded-lg p-8 text-center h-full shadow-lg ${
+                  theme === 'dark' ? 'border border-slate-700/70' : ''
+                }`}
               >
                 {/* Step number */}
                 <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">

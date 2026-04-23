@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
-import { Wrench, Droplets, Wind, Zap } from 'lucide-react';
+import { Wrench, Droplets, Wind, Zap, Microwave } from 'lucide-react';
 
-export const ServiceShowcase = () => {
+interface ServiceShowcaseProps {
+  theme: 'light' | 'dark';
+}
+
+export const ServiceShowcase = ({ theme }: ServiceShowcaseProps) => {
   const services = [
     {
       icon: <Wrench size={48} />,
@@ -27,10 +31,22 @@ export const ServiceShowcase = () => {
       color: 'from-cyan-500 to-blue-600',
       delay: 0.3,
     },
+    {
+      icon: <Microwave size={48} />,
+      name: 'Microwave Oven',
+      color: 'from-violet-500 to-purple-600',
+      delay: 0.4,
+    },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section
+      className={`py-16 overflow-hidden ${
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-slate-950/90 to-slate-900/85'
+          : 'bg-gradient-to-b from-white to-gray-50'
+      }`}
+    >
       <div className="container-custom">
         {/* Header Animation */}
         <motion.div
@@ -63,7 +79,7 @@ export const ServiceShowcase = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-12"
         >
           {services.map((service, index) => (
             <motion.div

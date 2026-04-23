@@ -81,7 +81,7 @@ export const Hero = ({ onBookClick }: HeroProps) => {
             variants={itemVariants}
             className="text-lg md:text-xl mb-8 opacity-90 leading-relaxed"
           >
-            Professional technicians for washing machines, geysers, refrigerators, and water purifiers.
+            Professional technicians for washing machines, geysers, refrigerators, microwave ovens, and water purifiers.
             Quick service, certified experts, and affordable pricing.
           </motion.p>
 

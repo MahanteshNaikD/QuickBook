@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
-import { Zap, Users, DollarSign, Home, Star } from 'lucide-react';
+import { Zap, Users, IndianRupee, Home, Star } from 'lucide-react';
 import { PolygonBackground } from './BackgroundAnimations';
 
-export const WhyChooseUs = () => {
+interface WhyChooseUsProps {
+  theme: 'light' | 'dark';
+}
+
+export const WhyChooseUs = ({ theme }: WhyChooseUsProps) => {
   const benefits = [
     {
       icon: <Zap size={40} />,
@@ -15,7 +19,7 @@ export const WhyChooseUs = () => {
       description: 'Trained and certified professionals only',
     },
     {
-      icon: <DollarSign size={40} />,
+      icon: <IndianRupee size={40} />,
       title: 'Affordable Pricing',
       description: 'Transparent pricing with no hidden charges',
     },
@@ -51,7 +55,14 @@ export const WhyChooseUs = () => {
   };
 
   return (
-    <section id="why-choose-us" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section
+      id="why-choose-us"
+      className={`py-20 relative overflow-hidden ${
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-slate-950/90 to-slate-900/85'
+          : 'bg-gray-50'
+      }`}
+    >
       <PolygonBackground />
       <div className="container-custom relative z-10">
         <motion.div
@@ -81,7 +92,9 @@ export const WhyChooseUs = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300"
+              className={`bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 ${
+                theme === 'dark' ? 'border border-slate-700/70' : ''
+              }`}
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 10 }}

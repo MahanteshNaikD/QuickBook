@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Wrench, Droplets, Wind, Zap } from 'lucide-react';
+import { Wrench, Droplets, Wind, Zap, Microwave } from 'lucide-react';
 import { EnhancedServiceCard } from './EnhancedServiceCard';
 import { ServiceIconsBackground } from './BackgroundAnimations';
 import {
@@ -7,6 +7,7 @@ import {
   GeyserImage,
   WaterPurifierImage,
   RefrigeratorImage,
+  MicrowaveOvenImage,
 } from './ServiceImages';
 import type { Service } from '../types/booking';
 import showcaseBackground from '../assets/1745371656.png';
@@ -99,6 +100,25 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
       pricing: 'From ₹400',
       timeEstimate: '3-4 hours',
     },
+    {
+      id: 'microwave-oven',
+      name: 'Microwave Oven Repair',
+      description: 'Reliable diagnosis and repair for solo, grill, and convection microwave ovens',
+      icon: <Microwave />,
+      image: <MicrowaveOvenImage />,
+      bgColor: 'from-violet-50 to-purple-100',
+      accentColor: 'text-violet-500',
+      features: [
+        'Magnetron and diode replacement',
+        'Keypad and touch panel repair',
+        'Door switch and latch servicing',
+        'Turntable motor replacement',
+        'Heating inconsistency troubleshooting',
+        'Power supply board repair',
+      ],
+      pricing: 'From ₹450',
+      timeEstimate: '2-3 hours',
+    },
   ];
 
   const containerVariants = {
@@ -145,7 +165,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6"
         >
           {services.map((service, index) => (
             <EnhancedServiceCard

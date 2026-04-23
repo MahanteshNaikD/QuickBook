@@ -47,6 +47,7 @@ export const ServiceIconsBackground = () => {
     { icon: '🌡️', color: 'from-red-400 to-orange-600' },
     { icon: '❄️', color: 'from-cyan-400 to-blue-600' },
     { icon: '💧', color: 'from-green-400 to-emerald-600' },
+    { icon: '📡', color: 'from-violet-400 to-purple-600' },
   ];
 
   return (

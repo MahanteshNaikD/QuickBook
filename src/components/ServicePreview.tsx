@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Clock, Zap, Badge } from 'lucide-react';
+import { Clock, Zap, Badge, Microwave } from 'lucide-react';
 
 export const ServicePreview = () => {
   const services = [
@@ -26,6 +26,12 @@ export const ServicePreview = () => {
       name: 'Water Purifier',
       time: '1 Hour',
       color: 'from-green-500 to-emerald-600',
+    },
+    {
+      icon: <Microwave className="w-6 h-6" />,
+      name: 'Microwave Oven',
+      time: '2-3 Hours',
+      color: 'from-violet-500 to-purple-600',
     },
   ];
 
@@ -54,7 +60,7 @@ export const ServicePreview = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-12"
     >
       {services.map((service, index) => (
         <motion.div

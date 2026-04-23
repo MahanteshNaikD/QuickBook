@@ -241,6 +241,9 @@ export const BookingForm = ({
                       <option value="Refrigerator Repair">
                         Refrigerator Repair
                       </option>
+                      <option value="Microwave Oven Repair">
+                        Microwave Oven Repair
+                      </option>
                     </select>
                     {errors.selectedService && (
                       <p className="text-red-500 text-sm mt-1">

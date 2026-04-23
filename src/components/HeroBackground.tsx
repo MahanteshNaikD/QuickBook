@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Wrench, Droplets, Wind, Zap } from 'lucide-react';
+import { Wrench, Droplets, Wind, Zap, Microwave } from 'lucide-react';
 
 export const FloatingAppliances = () => {
   const appliances = [
@@ -7,6 +7,7 @@ export const FloatingAppliances = () => {
     { Icon: Droplets, delay: 1, duration: 5, x: '80%', y: '30%' },
     { Icon: Wind, delay: 0.5, duration: 4.5, x: '15%', y: '70%' },
     { Icon: Zap, delay: 1.5, duration: 5.5, x: '85%', y: '60%' },
+    { Icon: Microwave, delay: 0.8, duration: 4.8, x: '55%', y: '12%' },
   ];
 
   return (

@@ -2,6 +2,7 @@ import washingMachineScreenshot from '../assets/Screenshot-2026-01-31-141632.png
 import geyserScreenshot from '../assets/Screenshot-2026-01-31-141644.png';
 import waterPurifierScreenshot from '../assets/Screenshot-2026-01-31-141651.png';
 import refrigeratorScreenshot from '../assets/Screenshot-2026-01-31-141657.png';
+import microwaveScreenshot from '../assets/screenshot_microoven.png';
 
 const imageClassName = 'w-full h-full object-cover object-center';
 
@@ -36,6 +37,15 @@ export const RefrigeratorImage = () => (
   <img
     src={refrigeratorScreenshot}
     alt="Technician checking refrigerator"
+    loading="lazy"
+    className={imageClassName}
+  />
+);
+
+export const MicrowaveOvenImage = () => (
+  <img
+    src={microwaveScreenshot}
+    alt="Technician repairing microwave oven"
     loading="lazy"
     className={imageClassName}
   />
