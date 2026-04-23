@@ -11,7 +11,7 @@ export const FloatingCallButton = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-        className="fixed bottom-6 right-6 z-40 md:hidden"
+        className="fixed bottom-6 right-6 z-40 md:hidden pointer-events-none"
       >
         <motion.a
           href={`tel:${phoneNumber}`}
@@ -24,7 +24,7 @@ export const FloatingCallButton = () => {
             y: { duration: 3, repeat: Infinity },
             type: 'spring',
           }}
-          className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-secondary text-white rounded-full shadow-lg hover:shadow-2xl transition-all"
+          className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-secondary text-white rounded-full shadow-lg hover:shadow-2xl transition-all pointer-events-auto relative z-10"
         >
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
@@ -36,7 +36,7 @@ export const FloatingCallButton = () => {
 
         {/* Animated Pulse */}
         <motion.div
-          className="absolute inset-0 rounded-full bg-primary opacity-20"
+          className="absolute inset-0 rounded-full bg-primary opacity-20 pointer-events-none"
           animate={{ scale: [1, 1.5, 2], opacity: [0.6, 0.3, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
