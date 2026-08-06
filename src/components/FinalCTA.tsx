@@ -65,6 +65,7 @@ export const FinalCTASection = ({ onBookClick }: FinalCTASectionProps) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
+            {/*
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
               whileTap={{ scale: 0.95 }}
@@ -73,13 +74,15 @@ export const FinalCTASection = ({ onBookClick }: FinalCTASectionProps) => {
             >
               Book Service Now
             </motion.button>
-            <motion.button
+            */}
+            <motion.a
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-primary font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              href={`tel:+919900280669`}
+              className="bg-white text-primary font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-block"
             >
               Call for Support
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Stats row */}
@@ -92,7 +95,7 @@ export const FinalCTASection = ({ onBookClick }: FinalCTASectionProps) => {
           >
             {[
               { number: '10K+', label: 'Customers' },
-              { number: '50+', label: 'Technicians' },
+              { number: '1+', label: 'Technicians' },
               { number: '98%', label: 'Satisfaction' },
             ].map((stat, idx) => (
               <motion.div

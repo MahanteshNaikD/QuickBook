@@ -6,31 +6,26 @@ export const ServicePreview = () => {
     {
       icon: <Badge className="w-6 h-6" />,
       name: 'Washing Machine',
-      time: 'Same Day',
       color: 'from-blue-500 to-blue-600',
     },
     {
       icon: <Zap className="w-6 h-6" />,
       name: 'Geyser',
-      time: '2-4 Hours',
       color: 'from-red-500 to-orange-600',
     },
     {
       icon: <Clock className="w-6 h-6" />,
       name: 'Refrigerator',
-      time: '3-4 Hours',
       color: 'from-cyan-500 to-sky-600',
     },
     {
       icon: <Badge className="w-6 h-6" />,
       name: 'Water Purifier',
-      time: '1 Hour',
       color: 'from-green-500 to-emerald-600',
     },
     {
       icon: <Microwave className="w-6 h-6" />,
       name: 'Microwave Oven',
-      time: '2-3 Hours',
       color: 'from-violet-500 to-purple-600',
     },
   ];
@@ -77,7 +72,7 @@ export const ServicePreview = () => {
             {service.icon}
           </motion.div>
           <h4 className="font-bold text-sm mb-1">{service.name}</h4>
-          <p className="text-xs opacity-90">{service.time}</p>
+          <p className="text-xs opacity-90">Visit Charge: ₹199</p>
         </motion.div>
       ))}
     </motion.div>
@@ -88,7 +83,7 @@ export const ServicePreview = () => {
 export const ServiceStats = () => {
   const stats = [
     { number: '10K+', label: 'Happy Customers' },
-    { number: '50+', label: 'Expert Technicians' },
+    { number: '1+', label: 'Expert Technicians' },
     { number: '4.8★', label: 'Customer Rating' },
     { number: '24/7', label: 'Support Available' },
   ];

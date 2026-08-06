@@ -9,7 +9,7 @@ type NavbarProps = {
 
 export const Navbar = ({ theme, onThemeChange }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = '+919876543210';
+  const phoneNumber = '+919900280669';
 
   return (
     <motion.nav

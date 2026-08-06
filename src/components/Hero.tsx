@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 export const Hero = ({ onBookClick }: HeroProps) => {
-  const phoneNumber = '+919876543210';
+  const phoneNumber = '+919900280669';
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -89,14 +89,6 @@ export const Hero = ({ onBookClick }: HeroProps) => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onBookClick}
-              className="btn-primary bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg w-full sm:w-auto flex items-center justify-center gap-2"
-            >
-              Book a Service
-            </motion.button>
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

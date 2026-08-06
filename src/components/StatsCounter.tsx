@@ -78,8 +78,8 @@ interface StatsCounterProps {
 export const StatsCounter = ({ theme }: StatsCounterProps) => {
   const stats = [
     { number: 5000, label: 'Happy Customers', suffix: '+' },
-    { number: 25, label: 'Years of Experience', suffix: '+' },
-    { number: 100, label: 'Expert Technicians', suffix: '+' },
+    { number: 15, label: 'Years of Experience', suffix: '+' },
+    { number: 1, label: 'Expert Technicians', suffix: '+' },
   ];
 
   return (

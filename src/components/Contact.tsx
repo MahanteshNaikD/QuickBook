@@ -3,7 +3,7 @@ import { Phone, Clock, MapPin } from 'lucide-react';
 import { ParticleBackground } from './BackgroundAnimations';
 
 export const Contact = () => {
-  const phoneNumber = '+919876543210';
+  const phoneNumber = '+919900280669';
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -142,14 +142,15 @@ export const HowItWorks = ({ onBookClick, theme }: HowItWorksProps) => {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center mt-12"
         >
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={onBookClick}
-            className="btn-primary bg-gradient-to-r from-primary to-secondary hover:shadow-lg text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300"
+            href={`tel:+919900280669`}
+            className="btn-primary inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:shadow-lg text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300"
           >
-            Book Your Service Now
-          </motion.button>
+            <Phone size={18} />
+            Call Now
+          </motion.a>
         </motion.div>
       </div>
     </section>

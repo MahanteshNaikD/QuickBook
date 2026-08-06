@@ -18,8 +18,6 @@ interface ServicesSectionProps {
 
 interface ServiceDetail extends Service {
   features: string[];
-  pricing: string;
-  timeEstimate: string;
 }
 
 export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
@@ -40,8 +38,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
         'Drainage problems fixed',
         'Electronic control board repair',
       ],
-      pricing: 'From ₹500',
-      timeEstimate: '1-2 days',
+      
     },
     {
       id: 'geyser',
@@ -59,8 +56,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
         'Rust &amp; scale removal',
         'Pressure relief valve service',
       ],
-      pricing: 'From ₹300',
-      timeEstimate: '2-4 hours',
+      
     },
     {
       id: 'water-purifier',
@@ -78,8 +74,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
         'Leak &amp; damage repair',
         'Performance optimization',
       ],
-      pricing: 'From ₹800',
-      timeEstimate: '1 hour',
+      
     },
     {
       id: 'refrigerator',
@@ -97,8 +92,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
         'Frost buildup cleaning',
         'Gas refill &amp; leak repair',
       ],
-      pricing: 'From ₹400',
-      timeEstimate: '3-4 hours',
+      
     },
     {
       id: 'microwave-oven',
@@ -116,8 +110,7 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
         'Heating inconsistency troubleshooting',
         'Power supply board repair',
       ],
-      pricing: 'From ₹450',
-      timeEstimate: '2-3 hours',
+      
     },
   ];
 
@@ -174,8 +167,6 @@ export const ServicesSection = ({ onBookClick }: ServicesSectionProps) => {
               title={service.name}
               description={service.description}
               features={service.features}
-              pricing={service.pricing}
-              timeEstimate={service.timeEstimate}
               onBookClick={() => onBookClick(service.name)}
               index={index}
               image={service.image}

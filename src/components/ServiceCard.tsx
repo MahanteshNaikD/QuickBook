@@ -95,14 +95,16 @@ export const ServiceCard = ({
 
         <p className="text-gray-600 mb-6 flex-grow">{description}</p>
 
-        <motion.button
+        <p className="text-sm text-gray-500 mb-4">Visit Charge: ₹199</p>
+
+        <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={onBookClick}
-          className={`btn-primary w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-200`}
+          href={`tel:+919900280669`}
+          className={`btn-primary w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-200`}
         >
-          Book Now
-        </motion.button>
+          Call Now
+        </motion.a>
       </div>
     </motion.div>
   );

@@ -56,7 +56,7 @@ export const Home = ({ theme, onThemeChange }: HomeProps) => {
         <Navbar theme={theme} onThemeChange={onThemeChange} />
         <Hero onBookClick={() => handleBookClick()} />
         <HowItWorks onBookClick={() => handleBookClick()} theme={theme} />
-        <ServiceShowcase theme={theme} />
+        <ServiceShowcase theme={theme} onCardClick={(service) => handleBookClick(service)} />
         <StatsCounter theme={theme} />
         <ServicesSection onBookClick={handleBookClick} />
         <ServiceDetailsSection theme={theme} />

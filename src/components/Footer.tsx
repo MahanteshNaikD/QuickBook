@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Clock } from 'lucide-react';
 
 export const Footer = () => {
-  const phoneNumber = '+919876543210';
+  const phoneNumber = '+919900280669';
 
   const containerVariants = {
     hidden: { opacity: 0 },

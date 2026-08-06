@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, CheckCircle } from 'lucide-react';
 import type { BookingFormData } from '../types/booking';
 
@@ -25,6 +25,15 @@ export const BookingForm = ({
       selectedService: selectedService,
     },
   });
+
+  // Update form value when selectedService prop changes
+  useEffect(() => {
+    if (selectedService) {
+      // set the select field to the provided service
+      // use reset to ensure validation/defaults are consistent
+      reset({ selectedService });
+    }
+  }, [selectedService, reset]);
 
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -175,7 +184,8 @@ export const BookingForm = ({
                         validate: validatePhone,
                       })}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                      placeholder="9876543210"
+                      placeholder="9900280669"
+                      
                       maxLength={10}
                     />
                     {errors.phoneNumber && (

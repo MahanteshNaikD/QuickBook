@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Clock, Zap, Shield } from 'lucide-react';
+import { Zap, Shield, Phone } from 'lucide-react';
 
 interface EnhancedServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   features: string[];
-  pricing: string;
-  timeEstimate: string;
   onBookClick: () => void;
   index: number;
   image?: React.ReactNode;
@@ -20,8 +18,6 @@ export const EnhancedServiceCard = ({
   title,
   description,
   features,
-  pricing,
-  timeEstimate,
   onBookClick,
   index,
   image,
@@ -37,6 +33,20 @@ export const EnhancedServiceCard = ({
       viewport={{ once: true, margin: '-100px' }}
       whileHover={{ y: -10 }}
       className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+      role="button"
+      tabIndex={0}
+      onClick={(e) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('button') || target.closest('a')) return;
+        onBookClick();
+      }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const target = e.target as HTMLElement;
+          if (target.closest('button') || target.closest('a')) return;
+          onBookClick();
+        }
+      }}
     >
       {/* Image Section */}
       {image ? (
@@ -93,16 +103,9 @@ export const EnhancedServiceCard = ({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 + 0.3 }}
-          className="grid grid-cols-2 gap-3 mb-4 pb-4 border-b border-gray-200"
+          className="mb-4 pb-4 border-b border-gray-200"
         >
-          <div className="flex items-center gap-2 text-sm">
-            <Clock className="w-4 h-4 text-secondary" />
-            <span className="font-medium text-gray-700">{timeEstimate}</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <Zap className="w-4 h-4 text-accent" />
-            <span className="font-medium text-gray-700">{pricing}</span>
-          </div>
+          <div className="mt-2 text-xs text-gray-500">Visit Charge: ₹199</div>
         </motion.div>
 
         {/* Features List */}
@@ -143,14 +146,15 @@ export const EnhancedServiceCard = ({
         </motion.div>
 
         {/* Book Button */}
-        <motion.button
+        <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={onBookClick}
-          className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-lg text-white font-semibold py-3 rounded-lg transition-all duration-200 mt-auto"
+          href={`tel:+919900280669`}
+          className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:shadow-lg text-white font-semibold py-3 rounded-lg transition-all duration-200 mt-auto"
         >
-          Book Now
-        </motion.button>
+          <Phone size={16} />
+          Call Now
+        </motion.a>
       </div>
     </motion.div>
   );
