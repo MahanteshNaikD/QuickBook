@@ -4,7 +4,6 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  onBookClick: () => void;
   index: number;
   image?: React.ReactNode;
   bgColor?: string;
@@ -15,7 +14,6 @@ export const ServiceCard = ({
   icon,
   title,
   description,
-  onBookClick,
   index,
   image,
   bgColor = 'from-blue-50 to-blue-100',

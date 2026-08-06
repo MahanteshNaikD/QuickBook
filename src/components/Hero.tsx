@@ -4,11 +4,7 @@ import { FloatingAppliances, HeroSectionIllustration } from './HeroBackground';
 import { ServicePreview } from './ServicePreview';
 import showcaseBackground from '../assets/1745371656.png';
 
-interface HeroProps {
-  onBookClick: () => void;
-}
-
-export const Hero = ({ onBookClick }: HeroProps) => {
+export const Hero = () => {
   const phoneNumber = '+919900280669';
 
   const containerVariants = {

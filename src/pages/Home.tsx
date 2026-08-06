@@ -54,15 +54,15 @@ export const Home = ({ theme, onThemeChange }: HomeProps) => {
       <div className="relative z-10">
         <AnimatedBackground />
         <Navbar theme={theme} onThemeChange={onThemeChange} />
-        <Hero onBookClick={() => handleBookClick()} />
-        <HowItWorks onBookClick={() => handleBookClick()} theme={theme} />
+        <Hero />
+        <HowItWorks theme={theme} />
         <ServiceShowcase theme={theme} onCardClick={(service) => handleBookClick(service)} />
         <StatsCounter theme={theme} />
         <ServicesSection onBookClick={handleBookClick} />
         <ServiceDetailsSection theme={theme} />
         <WhyChooseUs theme={theme} />
         <Contact />
-        <FinalCTASection onBookClick={() => handleBookClick()} />
+        <FinalCTASection />
         <Footer />
         <BookingForm
           isOpen={isBookingOpen}

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Zap, Shield, Phone } from 'lucide-react';
+import { Shield, Phone } from 'lucide-react';
 
 interface EnhancedServiceCardProps {
   icon: React.ReactNode;

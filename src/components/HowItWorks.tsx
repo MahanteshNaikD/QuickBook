@@ -3,11 +3,10 @@ import { Phone, MapPin, Wrench, CheckCircle } from 'lucide-react';
 import { FloatingShapes } from './AnimatedBackground';
 
 interface HowItWorksProps {
-  onBookClick: () => void;
   theme: 'light' | 'dark';
 }
 
-export const HowItWorks = ({ onBookClick, theme }: HowItWorksProps) => {
+export const HowItWorks = ({ theme }: HowItWorksProps) => {
   const steps = [
     {
       icon: <Phone className="w-8 h-8" />,

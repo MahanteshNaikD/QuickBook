@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
 import { CircuitPattern } from './BackgroundAnimations';
 
-interface FinalCTASectionProps {
-  onBookClick: () => void;
-}
-
-export const FinalCTASection = ({ onBookClick }: FinalCTASectionProps) => {
+export const FinalCTASection = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-primary via-secondary to-primary relative overflow-hidden">
       <CircuitPattern />
